@@ -1,0 +1,10 @@
+{
+  "links": {
+    "github": "https://github.com",
+    "docs": "/portfolio/knowledge",
+    "blog": "https://blog.example.com",
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com"
+  },
+  "description": "第三方链接配置文件示例 - 复制此文件为 external-links.json 并按需修改"
+}
