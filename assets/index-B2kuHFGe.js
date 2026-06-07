@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-BCo6x5W8.js";import{b as n,c as r,f as s}from"./index-DK6y-4U_.js";const t={class:"page-content"};const o=e({},[["render",function(e,o){return n(),r("div",t,[...o[0]||(o[0]=[s("h1",null,"菜单-2-1",-1)])])}]]);export{o as default};

@@ -1,1 +1,0 @@
-import{D as a,s,x as t,dT as u}from"./index-DK6y-4U_.js";const n=t(),o=()=>{var t,o;const r=a(),{isFrontendMode:e}=u(),{info:i}=s(n),l=null!=(o=null==(t=i.value)?void 0:t.buttons)?o:[],d=Array.isArray(r.meta.authList)?r.meta.authList:[];return{hasAuth:a=>e.value?l.includes(a):d.some(s=>(null==s?void 0:s.authMark)===a)}};export{o as u};
