@@ -28,10 +28,15 @@ export const configureNProgress = () => {
 
 /**
  * 设置页面标题，根据路由元信息和系统信息拼接标题
- * @param to 当前路由对象
+ * @param to 当前路由对象或直接传入标题字符串
  */
-export const setPageTitle = (to: RouteLocationNormalized): void => {
-  const { title } = to.meta
+export const setPageTitle = (toOrTitle: RouteLocationNormalized | string): void => {
+  let title: string | undefined
+  if (typeof toOrTitle === 'string') {
+    title = toOrTitle
+  } else {
+    title = toOrTitle.meta.title as string | undefined
+  }
   if (title) {
     setTimeout(() => {
       document.title = `${formatMenuTitle(String(title))} - ${AppConfig.systemInfo.name}`

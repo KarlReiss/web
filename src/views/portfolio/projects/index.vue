@@ -54,7 +54,16 @@
 
   const { t } = useI18n()
 
-  const projects = computed(() => [
+  interface ProjectItem {
+    icon: string
+    title: string
+    tag: string
+    tagType: 'primary' | 'success' | 'warning' | 'info' | 'danger'
+    desc: string
+    techs: string[]
+  }
+
+  const projects = computed<ProjectItem[]>(() => [
     {
       icon: '📋',
       title: t('portfolio.projects.items[0].title'),

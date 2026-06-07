@@ -43,7 +43,15 @@
 
   const { t } = useI18n()
 
-  const tools = computed(() => [
+  interface ToolItem {
+    icon: string
+    title: string
+    desc: string
+    status: string
+    type: 'primary' | 'success' | 'warning' | 'info' | 'danger'
+  }
+
+  const tools = computed<ToolItem[]>(() => [
     {
       icon: '💬',
       title: t('portfolio.tools.items[0].title'),

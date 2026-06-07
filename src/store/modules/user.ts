@@ -34,6 +34,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { ElMessage } from 'element-plus'
+import { useI18n } from 'vue-i18n'
 import { LanguageEnum } from '@/enums/appEnum'
 import { router } from '@/router'
 import { useSettingStore } from './setting'
@@ -212,19 +213,21 @@ export const useUserStore = defineStore(
      */
     const refreshUserInfo = async () => {
       try {
+        const { t } = useI18n()
         const res = await fetchGetUserInfo()
         if (res) {
           // 更新用户信息
           info.value = res as Partial<Api.Auth.UserInfo>
           // 重新设置页面标题
           const currentUser = info.value
-          if (currentUser && currentUser.name) {
-            setPageTitle(currentUser.name)
+          if (currentUser && currentUser.userName) {
+            setPageTitle(currentUser.userName)
           }
           ElMessage.success(t('common.refreshSuccess'))
         }
       } catch (error) {
         console.error('[UserStore] 刷新用户信息失败:', error)
+        const { t } = useI18n()
         ElMessage.error(t('common.refreshFailed'))
       }
     }
